@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let participant = ["leo", "kiki", "eden"];
+        let completion = ["eden", "kiki"];
+        function solution(participant, completion) {
+            var answer = '';
+            let len = participant.length;
+            let idx = new Array(len);
+            for (let i = 0; i < len; i++) {
+                for (let j = 0; j < completion.length; j++) {
+                    if (completion[j] == participant[i]) {
+                        idx[i] = 1;
+                        completion[j] = "";
+                    }
+                }
+            }
+            for (let i = 0; i < len; i++) {
+                if (idx[i] != 1) answer += participant[i];
+            }
+            return answer;
+        }
+        solution(participant, completion);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
